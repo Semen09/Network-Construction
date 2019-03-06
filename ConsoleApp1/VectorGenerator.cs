@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Generates vector
+    /// </summary>
     class VectorGenerator
     {
         Random rand = new Random();

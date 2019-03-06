@@ -23,16 +23,16 @@ namespace ConsoleApp1
             {
                 neurons.AddVertex(neurons.Matrix.VertexCounter);
             }
-
-
+            
+            // Vector of weights according to neurons
             float[] weights = new float[numberOfProps];
             // Initializing
             for(int i = 0; i < weights.Length; i++)
             {
                 weights[i] = 0.1f;
             }
-
-            for(int i = 0; i < 100; i++)
+            // Calibrating weights
+            for(int i = 0; i < 1000; i++)
             {
                 List<bool> input = vg.CreateVector(numberOfProps);
                 float[] tempWeights = weights;
@@ -47,6 +47,9 @@ namespace ConsoleApp1
                 Console.WriteLine(f);
             }
 
+            /*********
+             * Below is implementation of another algorythm which uses tree
+             * **********/
 
             // Simple loop of vectors input
             /*List<bool> t;
@@ -127,6 +130,7 @@ namespace ConsoleApp1
                     c++;
                 }
             }
+            // Displays matrix of input vectors
             for (int i = 0; i < 8; i++)
             {
                 // columns
@@ -138,6 +142,7 @@ namespace ConsoleApp1
             }
             bool[,] ttm = new bool[8, 28];
             int ctr = 0;
+            // Creates equi matrix
             for (int i = 0; i < 8; i++)
             {
                 // columns
@@ -151,6 +156,7 @@ namespace ConsoleApp1
                 }
                 ctr = 0;
             }
+            // Displays equi matrix
             for (int i = 0; i < 8; i++)
             {
                 for (int k = 0; k < 28; k++)
@@ -161,7 +167,11 @@ namespace ConsoleApp1
             }
             return ttm;
         }
-
+        /// <summary>
+        /// Returns sum of vector components
+        /// </summary>
+        /// <param name="vector"></param>
+        /// <returns></returns>
         public static float Sum(float[] vector)
         {
             float sum = 0;
